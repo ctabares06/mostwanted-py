@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  wanteddb:
+    image: postgres:14.9
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: fok
+      POSTGRES_PASSWORD: fok
+      POSTGRES_DB: mostwanted
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - ./shared/pgdata:/var/lib/postgresql/data/pgdata
