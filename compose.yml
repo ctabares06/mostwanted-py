@@ -3,6 +3,14 @@ version: '3.8'
 services:
   api:
     build: .
+    volumes:
+      - ./:/app
+    environment:
+      - DB_HOST=wanteddb
+      - DB_NAME=mostwanted
+      - DB_USER=fok
+      - DB_PASS=fok
+      - DB_PORT=5432
     ports:
       - 8000:8000
     depends_on:
